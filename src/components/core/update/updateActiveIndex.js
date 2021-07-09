@@ -4,6 +4,7 @@ export default function updateActiveIndex(newActiveIndex) {
   const swiper = this;
   const translate = swiper.rtlTranslate ? swiper.translate : -swiper.translate;
   const {
+    slides,
     slidesGrid,
     snapGrid,
     params,
@@ -48,6 +49,16 @@ export default function updateActiveIndex(newActiveIndex) {
     return;
   }
 
+  let activeDomIndex = activeIndex;
+
+  for (let i = 0; i <= activeIndex; i += 1) {
+    const slide = slides.eq(i);
+
+    if (slide.css('display') === 'none') {
+      activeDomIndex += 1;
+    }
+  }
+
   // Get real index
   const realIndex = parseInt(
     swiper.slides.eq(activeIndex).attr('data-swiper-slide-index') || activeIndex,
@@ -59,8 +70,10 @@ export default function updateActiveIndex(newActiveIndex) {
     realIndex,
     previousIndex,
     activeIndex,
+    activeDomIndex,
   });
   swiper.emit('activeIndexChange');
+  swiper.emit('activeDomIndexChange');
   swiper.emit('snapIndexChange');
   if (previousRealIndex !== realIndex) {
     swiper.emit('realIndexChange');

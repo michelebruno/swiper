@@ -158,6 +158,7 @@ class Swiper {
 
       // Indexes
       activeIndex: 0,
+      activeDomIndex: 0,
       realIndex: 0,
 
       //
