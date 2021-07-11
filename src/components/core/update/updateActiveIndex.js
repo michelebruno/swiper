@@ -51,10 +51,10 @@ export default function updateActiveIndex(newActiveIndex) {
 
   let activeDomIndex = activeIndex;
 
-  for (let i = 0; i <= activeIndex; i += 1) {
+  for (let i = 0; i <= activeDomIndex; i += 1) {
     const slide = slides.eq(i);
 
-    if (slide.css('display') === 'none') {
+    if (slide.outerWidth(true) === 0) {
       activeDomIndex += 1;
     }
   }

@@ -39,7 +39,7 @@ export default function updateSlidesClasses() {
   // Next Slide
   let nextSlide = activeSlide.nextAll(`.${params.slideClass}`).eq(0);
 
-  while (nextSlide.css('display') === 'none') {
+  while (nextSlide.length && nextSlide.outerWidth(true) === 0) {
     nextSlide = nextSlide.nextAll(`.${params.slideClass}`).eq(0);
   }
   nextSlide.addClass(params.slideNextClass);
@@ -51,7 +51,7 @@ export default function updateSlidesClasses() {
   // Prev Slide
   let prevSlide = activeSlide.prevAll(`.${params.slideClass}`).eq(0);
 
-  while (prevSlide.css('display') === 'none') {
+  while (prevSlide.length && prevSlide.outerWidth(true) === 0) {
     prevSlide = prevSlide.prevAll(`.${params.slideClass}`).eq(0);
   }
   prevSlide.addClass(params.slidePrevClass);
