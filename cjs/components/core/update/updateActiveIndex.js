@@ -57,10 +57,10 @@ function updateActiveIndex(newActiveIndex) {
 
   var activeDomIndex = activeIndex;
 
-  for (var _i = 0; _i <= activeIndex; _i += 1) {
+  for (var _i = 0; _i <= activeDomIndex; _i += 1) {
     var slide = slides.eq(_i);
 
-    if (slide.css('display') === 'none') {
+    if (slide.outerWidth(true) === 0) {
       activeDomIndex += 1;
     }
   } // Get real index

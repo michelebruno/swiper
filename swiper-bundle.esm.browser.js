@@ -2363,8 +2363,7 @@ function updateSlidesClasses() {
 
   var nextSlide = activeSlide.nextAll("." + params.slideClass).eq(0);
 
-  while (!nextSlide.outerWidth()) {
-    console.log("skipping slide");
+  while (nextSlide.length && nextSlide.outerWidth(true) === 0) {
     nextSlide = nextSlide.nextAll("." + params.slideClass).eq(0);
   }
 
@@ -2378,7 +2377,7 @@ function updateSlidesClasses() {
 
   var prevSlide = activeSlide.prevAll("." + params.slideClass).eq(0);
 
-  while (!prevSlide.outerWidth()) {
+  while (prevSlide.length && prevSlide.outerWidth(true) === 0) {
     prevSlide = prevSlide.prevAll("." + params.slideClass).eq(0);
   }
 
@@ -2459,10 +2458,10 @@ function updateActiveIndex(newActiveIndex) {
 
   var activeDomIndex = activeIndex;
 
-  for (var _i = 0; _i <= activeIndex; _i += 1) {
+  for (var _i = 0; _i <= activeDomIndex; _i += 1) {
     var slide = slides.eq(_i);
 
-    if (slide.css('display') === 'none') {
+    if (slide.outerWidth(true) === 0) {
       activeDomIndex += 1;
     }
   } // Get real index

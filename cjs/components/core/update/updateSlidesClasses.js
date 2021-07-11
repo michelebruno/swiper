@@ -36,8 +36,7 @@ function updateSlidesClasses() {
 
   var nextSlide = activeSlide.nextAll("." + params.slideClass).eq(0);
 
-  while (!nextSlide.outerWidth()) {
-    console.log("skipping slide");
+  while (nextSlide.length && nextSlide.outerWidth(true) === 0) {
     nextSlide = nextSlide.nextAll("." + params.slideClass).eq(0);
   }
 
@@ -51,7 +50,7 @@ function updateSlidesClasses() {
 
   var prevSlide = activeSlide.prevAll("." + params.slideClass).eq(0);
 
-  while (!prevSlide.outerWidth()) {
+  while (prevSlide.length && prevSlide.outerWidth(true) === 0) {
     prevSlide = prevSlide.prevAll("." + params.slideClass).eq(0);
   }
 
