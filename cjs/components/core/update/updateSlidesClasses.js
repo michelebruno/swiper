@@ -36,7 +36,7 @@ function updateSlidesClasses() {
 
   var nextSlide = activeSlide.nextAll("." + params.slideClass).eq(0);
 
-  while (nextSlide.css('display') === 'none') {
+  while (!nextSlide.outerWidth()) {
     nextSlide = nextSlide.nextAll("." + params.slideClass).eq(0);
   }
 
@@ -50,7 +50,7 @@ function updateSlidesClasses() {
 
   var prevSlide = activeSlide.prevAll("." + params.slideClass).eq(0);
 
-  while (prevSlide.css('display') === 'none') {
+  while (!prevSlide.outerWidth()) {
     prevSlide = prevSlide.prevAll("." + params.slideClass).eq(0);
   }
 
