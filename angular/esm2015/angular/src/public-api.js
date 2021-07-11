@@ -1,0 +1,7 @@
+/*
+ * Public API Surface of angular
+ */
+export * from './swiper.module';
+export * from './swiper.component';
+export * from './swiper-slide.directive';
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHVibGljLWFwaS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uLy4uL3NyYy9hbmd1bGFyL3NyYy9wdWJsaWMtYXBpLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOztHQUVHO0FBQ0gsY0FBYyxpQkFBaUIsQ0FBQztBQUNoQyxjQUFjLG9CQUFvQixDQUFDO0FBQ25DLGNBQWMsMEJBQTBCLENBQUMiLCJzb3VyY2VzQ29udGVudCI6WyIvKlxyXG4gKiBQdWJsaWMgQVBJIFN1cmZhY2Ugb2YgYW5ndWxhclxyXG4gKi9cclxuZXhwb3J0ICogZnJvbSAnLi9zd2lwZXIubW9kdWxlJztcclxuZXhwb3J0ICogZnJvbSAnLi9zd2lwZXIuY29tcG9uZW50JztcclxuZXhwb3J0ICogZnJvbSAnLi9zd2lwZXItc2xpZGUuZGlyZWN0aXZlJztcclxuIl19
