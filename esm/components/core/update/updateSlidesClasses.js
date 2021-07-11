@@ -32,6 +32,7 @@ export default function updateSlidesClasses() {
   var nextSlide = activeSlide.nextAll("." + params.slideClass).eq(0);
 
   while (!nextSlide.outerWidth()) {
+    console.log("skipping slide");
     nextSlide = nextSlide.nextAll("." + params.slideClass).eq(0);
   }
 
