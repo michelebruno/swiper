@@ -19,12 +19,10 @@ var HashNavigation = {
         var slide = swiper.slides.eq(i);
 
         if (slide.outerWidth(true) === 0) {
-          console.log("Removed a unit from index");
           realIndex -= 1;
         }
       }
 
-      console.log("real index by hash: ");
       if (typeof realIndex === 'undefined') return;
       swiper.slideTo(realIndex);
     }
@@ -62,7 +60,6 @@ var HashNavigation = {
 
         if (slideHash === hash && !slide.hasClass(swiper.params.slideDuplicateClass)) {
           var index = slide.index();
-          ;
           var realIndex = index;
 
           for (var a = 0; a <= index; a += 1) {
@@ -73,7 +70,6 @@ var HashNavigation = {
             }
           }
 
-          console.log("real index by hash: ");
           swiper.slideTo(realIndex, speed, swiper.params.runCallbacksOnInit, true);
         }
       }
