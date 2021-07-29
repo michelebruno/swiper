@@ -8,7 +8,7 @@ const HashNavigation = {
     const document = getDocument();
     swiper.emit('hashChange');
     const newHash = document.location.hash.replace('#', '');
-    const activeSlideHash = swiper.slides.eq(swiper.activeIndex).attr('data-hash');
+    const activeSlideHash = swiper.slides.eq(swiper.activeDomIndex).attr('data-hash');
     if (newHash !== activeSlideHash) {
       const newIndex = swiper.$wrapperEl
         .children(`.${swiper.params.slideClass}[data-hash="${newHash}"]`)
@@ -30,11 +30,11 @@ const HashNavigation = {
       window.history.replaceState(
         null,
         null,
-        `#${swiper.slides.eq(swiper.activeIndex).attr('data-hash')}` || '',
+        `#${swiper.slides.eq(swiper.activeDomIndex).attr('data-hash')}` || '',
       );
       swiper.emit('hashSet');
     } else {
-      const slide = swiper.slides.eq(swiper.activeIndex);
+      const slide = swiper.slides.eq(swiper.activeDomIndex);
       const hash = slide.attr('data-hash') || slide.attr('data-history');
       document.location.hash = hash || '';
       swiper.emit('hashSet');
