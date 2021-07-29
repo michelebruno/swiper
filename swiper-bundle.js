@@ -8867,6 +8867,15 @@
 
       if (newHash !== activeSlideHash) {
         var newIndex = swiper.$wrapperEl.children("." + swiper.params.slideClass + "[data-hash=\"" + newHash + "\"]").index();
+
+        for (var i = 0; i <= newIndex; i += 1) {
+          var slide = swiper.slides.eq(i);
+
+          if (slide.outerWidth(true) === 0) {
+            newIndex -= 1;
+          }
+        }
+
         if (typeof newIndex === 'undefined') return;
         swiper.slideTo(newIndex);
       }
