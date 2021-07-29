@@ -7,7 +7,7 @@
  *
  * Released under the MIT License
  *
- * Released on: July 11, 2021
+ * Released on: July 29, 2021
  */
 
 import { Swiper } from './esm/react/swiper';

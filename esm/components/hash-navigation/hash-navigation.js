@@ -9,7 +9,7 @@ var HashNavigation = {
     var document = getDocument();
     swiper.emit('hashChange');
     var newHash = document.location.hash.replace('#', '');
-    var activeSlideHash = swiper.slides.eq(swiper.activeIndex).attr('data-hash');
+    var activeSlideHash = swiper.slides.eq(swiper.activeDomIndex).attr('data-hash');
 
     if (newHash !== activeSlideHash) {
       var newIndex = swiper.$wrapperEl.children("." + swiper.params.slideClass + "[data-hash=\"" + newHash + "\"]").index();
@@ -24,10 +24,10 @@ var HashNavigation = {
     if (!swiper.hashNavigation.initialized || !swiper.params.hashNavigation.enabled) return;
 
     if (swiper.params.hashNavigation.replaceState && window.history && window.history.replaceState) {
-      window.history.replaceState(null, null, "#" + swiper.slides.eq(swiper.activeIndex).attr('data-hash') || '');
+      window.history.replaceState(null, null, "#" + swiper.slides.eq(swiper.activeDomIndex).attr('data-hash') || '');
       swiper.emit('hashSet');
     } else {
-      var slide = swiper.slides.eq(swiper.activeIndex);
+      var slide = swiper.slides.eq(swiper.activeDomIndex);
       var hash = slide.attr('data-hash') || slide.attr('data-history');
       document.location.hash = hash || '';
       swiper.emit('hashSet');
