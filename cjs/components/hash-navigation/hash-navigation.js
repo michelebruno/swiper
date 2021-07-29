@@ -23,17 +23,20 @@ var HashNavigation = {
 
     if (newHash !== activeSlideHash) {
       var newIndex = swiper.$wrapperEl.children("." + swiper.params.slideClass + "[data-hash=\"" + newHash + "\"]").index();
+      var realIndex = newIndex;
 
       for (var i = 0; i <= newIndex; i += 1) {
         var slide = swiper.slides.eq(i);
 
         if (slide.outerWidth(true) === 0) {
-          newIndex -= 1;
+          console.log("Removed a unit from index");
+          realIndex -= 1;
         }
       }
 
-      if (typeof newIndex === 'undefined') return;
-      swiper.slideTo(newIndex);
+      console.log("real index by hash: ");
+      if (typeof realIndex === 'undefined') return;
+      swiper.slideTo(realIndex);
     }
   },
   setHash: function setHash() {
@@ -69,7 +72,19 @@ var HashNavigation = {
 
         if (slideHash === hash && !slide.hasClass(swiper.params.slideDuplicateClass)) {
           var index = slide.index();
-          swiper.slideTo(index, speed, swiper.params.runCallbacksOnInit, true);
+          ;
+          var realIndex = index;
+
+          for (var a = 0; a <= index; a += 1) {
+            var _slide = swiper.slides.eq(a);
+
+            if (_slide.outerWidth(true) === 0) {
+              realIndex -= 1;
+            }
+          }
+
+          console.log("real index by hash: ");
+          swiper.slideTo(realIndex, speed, swiper.params.runCallbacksOnInit, true);
         }
       }
     }
