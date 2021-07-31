@@ -7,7 +7,7 @@
  *
  * Released under the MIT License
  *
- * Released on: July 29, 2021
+ * Released on: July 31, 2021
  */
 
 (function (global, factory) {
@@ -8916,7 +8916,7 @@
             var index = slide.index();
             var realIndex = index;
 
-            for (var a = 0; a <= index; a += 1) {
+            for (var a = 0; a <= realIndex; a += 1) {
               var _slide = swiper.slides.eq(a);
 
               if (_slide.outerWidth(true) === 0) {

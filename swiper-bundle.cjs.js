@@ -7,7 +7,7 @@
  *
  * Released under the MIT License
  *
- * Released on: July 29, 2021
+ * Released on: July 31, 2021
  */
 
 'use strict';
