@@ -5317,7 +5317,17 @@
       if (swiper.params.loop) {
         swiper.slideTo(swiper.params.initialSlide + swiper.loopedSlides, 0, swiper.params.runCallbacksOnInit, false, true);
       } else {
-        swiper.slideTo(swiper.params.initialSlide, 0, swiper.params.runCallbacksOnInit, false, true);
+        var initialSlide = swiper.params.initialSlide;
+
+        for (var a = 0; a <= initialSlide; a += 1) {
+          var _slide = swiper.slides.eq(a);
+
+          if (_slide.outerWidth(true) === 0) {
+            initialSlide -= 1;
+          }
+        }
+
+        swiper.slideTo(initialSlide, 0, swiper.params.runCallbacksOnInit, false, true);
       } // Attach events
 
 
