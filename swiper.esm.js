@@ -7,7 +7,7 @@
  *
  * Released under the MIT License
  *
- * Released on: July 31, 2021
+ * Released on: August 27, 2021
  */
 
 export { default as Swiper, default } from './esm/components/core/core-class';

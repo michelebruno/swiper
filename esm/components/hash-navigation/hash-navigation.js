@@ -15,7 +15,7 @@ var HashNavigation = {
       var newIndex = swiper.$wrapperEl.children("." + swiper.params.slideClass + "[data-hash=\"" + newHash + "\"]").index();
       var realIndex = newIndex;
 
-      for (var i = 0; i <= newIndex; i += 1) {
+      for (var i = 0; i < newIndex; i += 1) {
         var slide = swiper.slides.eq(i);
 
         if (slide.outerWidth(true) === 0) {

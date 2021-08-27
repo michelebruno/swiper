@@ -7,7 +7,7 @@
  *
  * Released under the MIT License
  *
- * Released on: July 31, 2021
+ * Released on: August 27, 2021
  */
 
 (function (global, factory) {
@@ -2470,7 +2470,7 @@
       if (slide.outerWidth(true) === 0) {
         activeDomIndex += 1;
       }
-    } // Get real index
+    } // Get real index\
 
 
     var realIndex = parseInt(swiper.slides.eq(activeIndex).attr('data-swiper-slide-index') || activeIndex, 10);
@@ -8879,7 +8879,7 @@
         var newIndex = swiper.$wrapperEl.children("." + swiper.params.slideClass + "[data-hash=\"" + newHash + "\"]").index();
         var realIndex = newIndex;
 
-        for (var i = 0; i <= newIndex; i += 1) {
+        for (var i = 0; i < newIndex; i += 1) {
           var slide = swiper.slides.eq(i);
 
           if (slide.outerWidth(true) === 0) {

@@ -57,7 +57,7 @@ export default function updateActiveIndex(newActiveIndex) {
     if (slide.outerWidth(true) === 0) {
       activeDomIndex += 1;
     }
-  } // Get real index
+  } // Get real index\
 
 
   var realIndex = parseInt(swiper.slides.eq(activeIndex).attr('data-swiper-slide-index') || activeIndex, 10);
